@@ -1,0 +1,25 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+data/raw/
+
+# Optional: outputs folder
+outputs/
+
+.DS_Store
+*.pyc
+egs/
+.nfs*
+outputs/
+enhanced/
+.vim
+models/
+private/
+dist
+build
+*.egg-info
+*.th
+launch_master.sh
+conf/dset/master.yaml
