@@ -5,7 +5,7 @@ import streamlit as st
 import numpy as np
 import soundfile as sf
 import librosa
-# from src.denoise import denoise
+from src.denoise import denoise
 
 
 st.set_page_config(
@@ -168,7 +168,7 @@ if uploaded_file:
     if st.button("Remove Noise"):
         with st.spinner("Processing..."):
             audio_16k = librosa.resample(audio_raw, orig_sr=sr_orig, target_sr=16000) if sr_orig != 16000 else audio_raw
-            # denoised = denoise(audio_16k, sample_rate=16000)
+            denoised = denoise(audio_16k, sample_rate=16000)
 
             buf = io.BytesIO()
             sf.write(buf, denoised, 16000, format="WAV")
